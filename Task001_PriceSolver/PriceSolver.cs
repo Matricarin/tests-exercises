@@ -47,6 +47,6 @@ public sealed class PriceSolver
             }
         }
 
-        return [resMaxI + 1, resMaxJ + 1, resMinI + 1, resMinJ + 1];
+        return [resMinI + 1, resMinJ + 1, resMaxI + 1, resMaxJ + 1,];
     }
 }
