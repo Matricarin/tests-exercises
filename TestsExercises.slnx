@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/Sql_tasks/" />
+  <Folder Name="/Sql_tasks/Task001_Logs/">
+    <File Path="Sql_tasks/Task001_Logs/README.MD" />
+    <File Path="Sql_tasks/Task001_Logs/Task001.sql" />
+  </Folder>
   <Folder Name="/Tests/">
     <Project Path="Tests/TasksPart1_TestProject/TasksPart1_TestProject.csproj" Id="4487d75b-92f1-463a-a1f3-d32789a3f4ff" />
   </Folder>
