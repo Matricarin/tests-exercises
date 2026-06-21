@@ -2,30 +2,39 @@
 
 public sealed class ThrottlingSolver
 {
-    public static async Task ProcessUrlsAsync
+    public static async Task<List<string>> ProcessUrlsAsync
     (
         IEnumerable<string> urls,
         int maxParallelism,
-        CancellationToken token
-    )
+        CancellationToken token)
     {
         using var semaphore = new SemaphoreSlim(maxParallelism);
 
         var tasks = urls.Select(s => ProcessUrl(s, semaphore, token));
 
-        await Task.WhenAll(tasks);
+       var result = await Task.WhenAll(tasks);
+
+       return result.SelectMany(l => l).ToList();
     }
 
-    private static async Task ProcessUrl(string url, SemaphoreSlim semaphore, CancellationToken token)
+    private static async Task<List<string>> ProcessUrl(string url, SemaphoreSlim semaphore, CancellationToken token)
     {
+        var list = new List<string>();
         try
         {
+            list.Add($"Задача создана {url}. Ожидание слоты. Current count: {semaphore.CurrentCount}");
+
             await semaphore.WaitAsync(token);
+
+            list.Add($"Слот занят! Выполнение работыы {url}.");
             await Task.Delay(url.Length + 1000, token);
         }
         finally
         {
+            list.Add($"Конец обработки {url}");
             semaphore.Release();
         }
+
+        return list;
     }
 }
