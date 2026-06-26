@@ -1,0 +1,6 @@
+@Task004_StopwatchMiddleware_HostAddress = http://localhost:5287
+
+GET {{Task004_StopwatchMiddleware_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

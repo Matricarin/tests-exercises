@@ -18,4 +18,5 @@
   <Project Path="Task001_PriceSolver/Task001_PriceSolver.csproj" Id="b7b4d859-04ae-457e-8fc1-ca75777d8f99" />
   <Project Path="Task002_Throttling/Task002_Throttling.csproj" Id="b783be7f-b3a8-4eaf-96f8-ae32a72a1a87" />
   <Project Path="Task003_KafkaBasicStructure/Task003_KafkaBasicStructure.csproj" Id="276ea47b-aa39-4db0-a59b-f7dec43c60ce" />
+  <Project Path="Task004_StopwatchMiddleware/Task004_StopwatchMiddleware.csproj" Id="1069080d-abe8-4bc1-a795-cf9959fd56e2" />
 </Solution>
