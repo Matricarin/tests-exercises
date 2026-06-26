@@ -2,3 +2,5 @@
 
 * **Сигнатура:** `public static async Task ProcessUrlsAsync(IEnumerable<string> urls, int maxParallelism)`
 * **Требование:** Напиши код с использованием `SemaphoreSlim`. Внутри метода сымитируй скачивание через `await Task.Delay(100)`. Код должен быть потокобезопасным и эффективно утилизировать ресурсы без создания лишних потоков.
+
+**Что важно:**
